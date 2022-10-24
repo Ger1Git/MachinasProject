@@ -17,6 +17,7 @@ body{
     text-align: center;
 }
 
+
 .navbar {
     background-color: #517ef1;
     display: flex;
@@ -47,6 +48,7 @@ body{
     top: 25px;
     right: 30px; 
 }
+
 
 
 .login-title  {
@@ -214,14 +216,13 @@ label {
 
     .login{
         width:100vw;
-        height:50vh;
         border-right: 0px;
         border-bottom: 1px solid gray;
     }
 
     .register{
         width:100vw;
-        height:60vh;
+        margin-bottom: 50px;
     }
 
     .login input{

@@ -50,34 +50,36 @@ body{
 }
 
 .accountInformation {
-    height: 80vh;
+    height: 68vh;
     position: relative;
 }
 
 .table div{
-    margin: 20px;
+    margin: 10px;
+}
+
+.credentials {
+    text-align: center;
 }
 
 .table {
-    background: linear-gradient(to bottom, #517ef1 60%, white 0%); 
-    height: 45vh;
-    width: 70vh;
+    background: linear-gradient(to bottom, #517ef1 45%, white 0%); 
+    height: 55vh;
+    width: 60vh;
     border: 4px solid #517ef1;
     border-radius: 10px;
-    font-size: 40px;
-    align-items: flex-start;
+    font-size: 3rem;
+    align-items: center;
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 10%;
-    left: 20%;
+    left: 35%;
 }
 
 
 .table img{
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5vh;
 }
 
 
@@ -105,4 +107,91 @@ body{
 .contact-details div{
     color: white;
     margin: 10px;
+}
+
+@media all and (max-width: 428px) {
+    .login-register{
+        flex-wrap: wrap;
+        gap: 10%;
+    }
+
+    .login{
+        width:100vw;
+        border-right: 0px;
+        border-bottom: 1px solid gray;
+    }
+
+    .register{
+        width:100vw;
+        margin-bottom: 50px;
+    }
+
+    .login input{
+        width: 90vw;
+        height: 4vh;
+    }
+
+    .login form button{
+        width: 90vw;
+    }
+
+    .register form button{
+        width: 90vw;
+    }
+
+    .register input{
+        width: 90vw;
+        height: 4vh;
+    }
+
+    .bottom-banner{
+        height: 35vh;
+        justify-content: space-around;
+        align-items: space-around;
+        flex-direction: column;
+    }
+
+}
+
+
+@media all and (max-width: 834px) and (min-width: 429px){
+    .login-register{
+        flex-wrap: wrap;
+        gap: 10%;
+    }
+
+    .login{
+        width:100vw;
+        border-right: 0px;
+        border-bottom: 1px solid gray;
+    }
+
+    .register{
+        width:100vw;
+        margin-bottom: 50px;
+    }
+
+    .login input{
+        width: 80vw;
+        height: 4vh;
+    }
+
+    .login form button{
+        width: 30vw;
+    }
+
+    .register form button{
+        width: 30vw;
+    }
+
+    .register input{
+        width: 80vw;
+        height: 4vh;
+    }
+
+    .bottom-banner{
+        justify-content: space-around;
+        align-items: space-around;
+    }
+
 }

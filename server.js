@@ -1,8 +1,6 @@
 const express = require('express')
 const app = express()
 const axios = require('axios')
-const bcrypt = require('bcrypt')
-
 
 
 const DATA = {
@@ -21,7 +19,11 @@ function getHeaderOptions(jwt){
   return HEADER;
 }
 
-
+let loggedUser = {
+   name: '',
+   username: '',
+   email: ''
+}
 
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended:false}))
@@ -29,7 +31,15 @@ app.use(express.static('Nodejs'))
 app.use('/css', express.static(__dirname + '/css'))
 
 app.get('/account', (req, res) => {
-    res.render('account.ejs')
+    res.render('account.ejs', { name: loggedUser.name, email: loggedUser.email, username: loggedUser.username})
+})
+
+app.get('/homepage', (req, res) => {
+  res.render('homepage.ejs')
+})
+
+app.get('/contact-us', (req, res) => {
+  res.render('contact-us.ejs')
 })
 
 app.get('/login', (req, res) => {
@@ -51,11 +61,13 @@ function getCustomerAuthToken(user, res){
         res.redirect('/account');
       } else {
         console.log("Not working...");
+        res.redirect('/login');
       }
   })
   .catch((e) => {
     console.error(e);
     console.log("Not working Error");
+    res.redirect('/login');
   })
 }
 
@@ -70,6 +82,9 @@ function getCustomerData(jwt){
       console.log('Respone', response.status)
       if(response.status == 200){
         console.log("Customer Data:",response.data);
+        loggedUser.name = response.data.last_name;
+        loggedUser.username = response.data.login;
+        loggedUser.email = response.data.email;
       } else {
         console.log("Not working...");
       }
@@ -131,8 +146,6 @@ app.post('/login', (req, res) => {
       console.log(err);
     }
   })
-
-// getCustomerAuthToken();
 
 app.listen(3000)
 
