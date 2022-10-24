@@ -82,6 +82,20 @@ body{
     margin-bottom: 5vh;
 }
 
+.table button {
+    border: none;
+    text-decoration: none;
+    background-color: #517ef1;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.table button:hover {
+    background-color: red;
+    color: white;
+}
+
 
 .bottom-banner {
     background-color: #517ef1;

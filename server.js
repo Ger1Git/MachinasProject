@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const axios = require('axios')
 
-
 const DATA = {
   type: 'credentials'
 }
@@ -46,21 +45,22 @@ app.get('/login', (req, res) => {
     res.render('login.ejs')
 })
 
+app.get('/logout', (req, res) =>{
+    res.redirect('/login');
+})
+
  /// get JWT from response HEADER
 function getCustomerAuthToken(user, res){  
   axios
   .post('https://dev05-na02-fresh.demandware.net/s/RefArch/dw/shop/v22_10/customers/auth?client_id=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', DATA, getHeader(user))
   .then((response) => {
-      // console.log('Req body:', response.data)
-      // console.log('Req header :', response.headers)
-      // console.log('Respone', response.status)
       if(response.status == 200){
-        console.log("Asta vrem:",response.headers.authorization);
+        console.log("Token:", response.headers.authorization);
         let jwt = response.headers.authorization;
         getCustomerData(jwt);
         res.redirect('/account');
       } else {
-        console.log("Not working...");
+        console.log("It's not working...");
         res.redirect('/login');
       }
   })
@@ -77,9 +77,6 @@ function getCustomerData(jwt){
   axios
   .get('https://dev05-na02-fresh.demandware.net/s/RefArch/dw/shop/v22_10/customers/abrZxZWKKD36NAkmsszpfSr3VP', getHeaderOptions(jwt))
   .then((response) => {
-      console.log('Req body:', response.data)
-      console.log('Req header :', response.headers)
-      console.log('Respone', response.status)
       if(response.status == 200){
         console.log("Customer Data:",response.data);
         loggedUser.name = response.data.last_name;
@@ -99,11 +96,8 @@ function getCustomerRegister(userTest){
   axios
   .post('https://dev05-na02-fresh.demandware.net/s/RefArch/dw/shop/v22_10/customers', DATA, getHeader(userTest))
   .then((response) => {
-      // console.log('Req body:', response.data)
-      // console.log('Req header :', response.headers)
-      // console.log('Respone', response.status)
       if(response.status == 200){
-        console.log("Asta vrem:",response.headers.authorization);
+        console.log("Token:", response.headers.authorization);
       } else {
         console.log("Not working...");
       }
@@ -117,7 +111,7 @@ function getCustomerRegister(userTest){
 
 app.post('/login', (req, res) => {
     try {
-        console.log(req.body)
+        // console.log(req.body)
         const user = {
             email: req.body.emailLogin,
             password: req.body.passwordLogin
@@ -132,7 +126,7 @@ app.post('/login', (req, res) => {
 
   app.post('/register', (req, res) => {
     try {
-        console.log(req.body)
+        // console.log(req.body)
         const userTest = {
           password: req.body.passwordRegister,
           customer : {
@@ -149,16 +143,3 @@ app.post('/login', (req, res) => {
 
 app.listen(3000)
 
-
-
-// function clearInput(elementId){
-//   var getValue= document.getElementById(elementId);
-//     if (getValue.value !="") {
-//         getValue.value = "";
-//     }
-// }
-// const jsdom = require("jsdom");
-// const { JSDOM } = jsdom;
-
-// const document = new JSDOM('http://localhost:3000/login').window.document;
-// console.log(document.getElementsByName("passwordLogin"));
