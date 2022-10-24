@@ -1,0 +1,250 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+section,footer{
+    white-space: wrap;
+    word-break: break-word;
+}
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    /* height: 100vh; */
+    font-family: Arial;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #517ef1;
+    display: flex;
+    flex: 60px 0 0;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    /* height: 60px; */
+}
+
+.navbar img{
+
+    transform: scale(0.2);
+    position: absolute;
+    top: -70px; 
+    right: -40px; 
+    cursor: pointer;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding : 3px;
+    transform: rotate(45deg);
+    position:absolute;
+    top: 25px;
+    right: 30px; 
+}
+
+
+.login-title  {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 100px;
+}
+
+
+.login{
+    width:50vw;
+    height:68vh;
+    border-right: 1px solid gray;
+}
+label {
+    display:block;
+    text-align: start;
+}
+
+.login form{
+    display: inline-block;
+}
+
+
+.login-register{
+    display:flex; 
+    justify-content: inline;
+}
+
+.login form button {
+    padding: 10px 40px;
+    border-radius: 10px;
+    border:none;
+    background-color: #517ef1;
+    color: white;
+    margin: 20px 0px;
+    box-shadow: 0px 3px 3px rgba(50,50,50,0.4);
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+
+.login input{
+    border: none;
+    background-color: #faf7f7;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: inset 1px 3px 3px rgba(50,50,50,0.4);
+    width: 30vw;
+    height: 4vh;
+    transition: 0.5s all ease;
+}
+
+.register{
+    width:50vw;
+    height:68vh;
+}
+
+.register input{
+    border: none;
+    background-color: #faf7f7;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: inset 1px 3px 3px rgba(50,50,50,0.4);
+    width: 30vw;
+    height: 4vh;
+    transition: 0.5s all ease;
+}
+
+.register form{
+    display: inline-block;
+}
+
+.regist-tile{
+    margin: 100px;
+}
+
+.register form button{
+    padding: 10px 40px;
+    border-radius: 10px;
+    border:none;
+    background-color: #517ef1;
+    color: white;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+
+.bottom-banner {
+    background-color: #517ef1;
+    height: 25vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: 0.5s all ease;
+}
+
+.linked-pages a{
+    margin: 10px auto;
+    color: white;
+    text-decoration: none;
+}
+
+.linked-pages{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details div{
+    color: white;
+    margin: 10px;
+}
+
+@media all and (max-width: 428px) {
+    .login-register{
+        flex-wrap: wrap;
+        gap: 10%;
+    }
+
+    .login{
+        width:100vw;
+        border-right: 0px;
+        border-bottom: 1px solid gray;
+    }
+
+    .register{
+        width:100vw;
+        margin-bottom: 50px;
+    }
+
+    .login input{
+        width: 90vw;
+        height: 4vh;
+    }
+
+    .login form button{
+        width: 90vw;
+    }
+
+    .register form button{
+        width: 90vw;
+    }
+
+    .register input{
+        width: 90vw;
+        height: 4vh;
+    }
+
+    .bottom-banner{
+        height: 35vh;
+        justify-content: space-around;
+        align-items: space-around;
+        flex-direction: column;
+    }
+
+}
+
+
+@media all and (max-width: 834px) and (min-width: 429px){
+    .login-register{
+        flex-wrap: wrap;
+        gap: 10%;
+    }
+
+    .login{
+        width:100vw;
+        height:50vh;
+        border-right: 0px;
+        border-bottom: 1px solid gray;
+    }
+
+    .register{
+        width:100vw;
+        height:60vh;
+    }
+
+    .login input{
+        width: 80vw;
+        height: 4vh;
+    }
+
+    .login form button{
+        width: 30vw;
+    }
+
+    .register form button{
+        width: 30vw;
+    }
+
+    .register input{
+        width: 80vw;
+        height: 4vh;
+    }
+
+    .bottom-banner{
+        justify-content: space-around;
+        align-items: space-around;
+    }
+
+}

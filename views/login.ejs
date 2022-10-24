@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <!-- <script src="script.js" defer></script> -->
+</head>
+<body>
+    <div class="navbar">
+        <div style="color: white; margin:20px; font-size: 1.4rem;"> Authentication App</div>
+        <div class="profile-menu"> 
+            <img src="css/profile1.png" alt="Image not loaded" />
+            <div class="arrow"></div>
+        </div>
+    </div>
+    <div class="login-register">
+        <div class="login">
+            <div class="login-title"><b>Login</b></div>
+            <form action="/login" id="loginForm" method="POST">
+                <div>
+                    <label for="emailLogin">Email adress</label>
+                    <input type ="type" name="emailLogin" id="email-login" required>
+                </div>
+                <div>
+                    <label for="passwordLogin">Password</label>
+                    <input type="password" name="passwordLogin" id="password-login" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="line"></div>
+        <div class="register">
+            <div class="login-title"><b>Register account</b></div>
+            <div class="register-title"></div>
+            <form action="/register" id="regForm" method="POST">
+                <div>
+                    <label for="emailRegister">Email address</label>
+                    <input type = "email" name="emailRegister" id="email-register" required>
+                </div>
+                <div>
+                    <label for="passowrdRegister">Password</label>
+                    <input type="password" name="passwordRegister" id="password-register" required>
+                </div>
+                <div>
+                    <label for="repeatPassword">Repeat password</label>
+                    <input type="password" name="repeatPassword" id="repeat-password-register" required>
+                </div>
+                <button type="submit" name="registerButton">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="bottom-banner" id="bottBanner">
+        <div style="color: white; font-size: 1.4rem;"> Authentication App</div>
+        <div class="linked-pages">
+            <a href="homepage.html">Home</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="homepage.html">Page 1</a>
+            <a href="contact-us.html">Page 2</a>
+        </div>
+        <div class="contact-details">
+            <div>(+40) 0000000000</div>
+            <div>(+40) 0000000000</div>
+            <div>contact@authapp.com</div>
+        </div>
+    </div>  
+</body>
+</html>
