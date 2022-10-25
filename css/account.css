@@ -12,7 +12,6 @@ section,footer{
 body{
     margin: 0px;
     padding: 0px;
-    /* height: 100vh; */
     font-family: Arial;
     text-align: center;
 }
@@ -26,7 +25,6 @@ body{
     position: sticky;
     top: 0px;
     z-index: 1;
-    /* height: 60px; */
 }
 
 .navbar img{
