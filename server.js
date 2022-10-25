@@ -83,7 +83,7 @@ function getCustomerData(jwt){
         loggedUser.username = response.data.login;
         loggedUser.email = response.data.email;
       } else {
-        console.log("Not working...");
+        console.log("It's not working...");
       }
       return response;
   })
@@ -99,7 +99,7 @@ function getCustomerRegister(userTest){
       if(response.status == 200){
         console.log("Token:", response.headers.authorization);
       } else {
-        console.log("Not working...");
+        console.log("It's not working...");
       }
   })
   .catch((e) => {
@@ -111,7 +111,6 @@ function getCustomerRegister(userTest){
 
 app.post('/login', (req, res) => {
     try {
-        // console.log(req.body)
         const user = {
             email: req.body.emailLogin,
             password: req.body.passwordLogin
@@ -126,7 +125,6 @@ app.post('/login', (req, res) => {
 
   app.post('/register', (req, res) => {
     try {
-        // console.log(req.body)
         const userTest = {
           password: req.body.passwordRegister,
           customer : {
