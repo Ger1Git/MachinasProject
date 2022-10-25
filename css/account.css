@@ -73,6 +73,7 @@ body{
     position: absolute;
     top: 10%;
     left: 35%;
+    transition: 0.2s ease;
 }
 
 
@@ -122,38 +123,25 @@ body{
 }
 
 @media all and (max-width: 428px) {
-    .login-register{
-        flex-wrap: wrap;
-        gap: 10%;
+    .table {
+        height: 45vh;
+        width: 40vh;
+        font-size: 1.8rem;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10%;
+        left: 7%;
     }
 
-    .login{
-        width:100vw;
-        border-right: 0px;
-        border-bottom: 1px solid gray;
+    .table img{
+        transform: scale(0.7);
+        margin-bottom: 2vh;
     }
 
-    .register{
-        width:100vw;
-        margin-bottom: 50px;
-    }
-
-    .login input{
-        width: 90vw;
-        height: 4vh;
-    }
-
-    .login form button{
-        width: 90vw;
-    }
-
-    .register form button{
-        width: 90vw;
-    }
-
-    .register input{
-        width: 90vw;
-        height: 4vh;
+    .table button {
+        font-size: 1.5rem;
     }
 
     .bottom-banner{
@@ -167,41 +155,29 @@ body{
 
 
 @media all and (max-width: 834px) and (min-width: 429px){
-    .login-register{
-        flex-wrap: wrap;
-        gap: 10%;
+    .table {
+        height: 40vh;
+        width: 35vh;
+        font-size: 2rem;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 15%;
+        left: 25%;
     }
 
-    .login{
-        width:100vw;
-        border-right: 0px;
-        border-bottom: 1px solid gray;
+    .table img{
+        transform: scale(0.7);
+        margin-bottom: 2vh;
     }
 
-    .register{
-        width:100vw;
-        margin-bottom: 50px;
-    }
-
-    .login input{
-        width: 80vw;
-        height: 4vh;
-    }
-
-    .login form button{
-        width: 30vw;
-    }
-
-    .register form button{
-        width: 30vw;
-    }
-
-    .register input{
-        width: 80vw;
-        height: 4vh;
+    .table button {
+        font-size: 1.5rem;
     }
 
     .bottom-banner{
+        height: 30vh;
         justify-content: space-around;
         align-items: space-around;
     }
